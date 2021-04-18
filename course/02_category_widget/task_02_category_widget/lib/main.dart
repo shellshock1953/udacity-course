@@ -26,15 +26,30 @@ class UnitConverterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Unit Converter',
-      home: Scaffold(
-        backgroundColor: Colors.green[100],
-        body: Center(
-          // TODO: Determine what properties you'll need to pass into the widget
-          child: Category(),
-        ),
-      ),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Unit Converter',
+        home: Scaffold(
+          backgroundColor: Colors.green[100],
+          appBar: AppBar(
+              title: Text('HEADER'),
+          ),
+          body: Padding(
+              padding: EdgeInsets.all(50.0),
+            child: Center(
+            // TODO: Determine what properties you'll need to pass into the widget
+            child: Column(children: [
+              Category(
+                name: _categoryName,
+                color: _categoryColor,
+                iconLocation: _categoryIcon,
+              ),
+              Category(
+                name: 'notCake',
+                color: Colors.cyan,
+                iconLocation: Icons.https,
+              ),
+            ]),
+          ),
+        )));
   }
 }
