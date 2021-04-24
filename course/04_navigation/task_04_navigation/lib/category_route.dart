@@ -3,11 +3,17 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-
 import 'package:task_04_navigation/category.dart';
 import 'package:task_04_navigation/unit.dart';
 
 final _backgroundColor = Colors.green[100];
+
+class ConvertExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(child: Text("FOLDEER"));
+  }
+}
 
 /// Category Route (screen).
 ///
@@ -66,6 +72,7 @@ class CategoryRoute extends StatelessWidget {
   Widget build(BuildContext context) {
     final categories = <Category>[];
 
+    // Generate from consts List for {name,color,icon,units}
     for (var i = 0; i < _categoryNames.length; i++) {
       categories.add(Category(
         name: _categoryNames[i],
@@ -75,6 +82,7 @@ class CategoryRoute extends StatelessWidget {
       ));
     }
 
+    // Container of <List>{name,color,icon,units}
     final listView = Container(
       color: _backgroundColor,
       padding: EdgeInsets.symmetric(horizontal: 8.0),
@@ -94,6 +102,7 @@ class CategoryRoute extends StatelessWidget {
       backgroundColor: _backgroundColor,
     );
 
+    // in the end - Scaffold of app<Text> and body<Container><List>{name,color,icon,units}
     return Scaffold(
       appBar: appBar,
       body: listView,
